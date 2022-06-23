@@ -35,7 +35,7 @@ imports: [
 export class DoctorService {
 
   constructor(private http: HttpClient) { }
-  private baseURL = `http://172.16.88.37:8080/api/user/getAll` 
+  private baseURL = `http://localhost:8080/api/user/getAll` 
  //  app.use('/api/user/getAll', routes);
 
   getAllData(): Observable<Doctor> {

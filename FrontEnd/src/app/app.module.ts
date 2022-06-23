@@ -19,6 +19,7 @@ import { GetAppointmentComponent } from './get-appointment/get-appointment.compo
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HospitalsComponent } from './hospitals/hospitals.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     SelectInputComponent,
     UserComponent,
     GetAppointmentComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    HospitalsComponent
   ],
   imports: [
     BrowserModule,

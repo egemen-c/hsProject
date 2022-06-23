@@ -9,7 +9,6 @@ import { AppointmentService } from '../services/appointment.service';
 export class UserComponent implements OnInit {
 
   constructor(private appointmentService:AppointmentService) { }
-  appointmentDetail:any
   ngOnInit(): void {
   
   }

@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +17,13 @@ interface Appointment {
     description: string,
 }
 
+
+interface City {
+  
+    cityName:string
+}
+
+
 imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,10 +38,26 @@ imports: [
 export class AppointmentService {
 
   constructor(private http: HttpClient) { }
-  private baseURL = `http://172.16.88.34:8090` 
+  private baseURLMongo = `http://172.16.88.34:8090` 
+  private baseURLSql = `http://localhost:8080` 
 
 
   getAllData(): Observable<Appointment> {
-   return this.http.get<Appointment>(`${this.baseURL}/pia/appointment/123456498`)
+   return this.http.get<Appointment>(`${this.baseURLMongo}/pia/appointment/123456`)}
+
+  getAllHospitals(): Observable<Appointment> {
+   return this.http.get<Appointment>(`${this.baseURLSql}/api/hospital/getAllHospitals`)}
+
+  getAllCities(): Observable<City> {
+   return this.http.get<City>(`${this.baseURLSql}/api/city/getAll`)}
+
+  getCitysHospital(value:number): Observable<any> {
+   return this.http.get<City>(`${this.baseURLSql}/api/cityHospital/`+value)} 
+
+  getHospitalDepartment(value:number): Observable<any> {
+   return this.http.get<City>(`${this.baseURLSql}/api/hospital/`+value)} 
+
+   getDepartmentDoctor(value:number): Observable<any> {
+   return this.http.get<any>(`${this.baseURLSql}/api/departmentDoctor/`+value)} 
 }
-}
+

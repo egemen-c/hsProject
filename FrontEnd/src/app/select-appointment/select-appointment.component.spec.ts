@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SelectAppointmentComponent } from './select-appointment.component';
+
 
 describe('SelectAppointmentComponent', () => {
   let component: SelectAppointmentComponent;
