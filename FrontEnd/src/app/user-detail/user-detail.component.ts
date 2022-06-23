@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -15,7 +15,7 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getAllData()
-      .subscribe(data => {
+      .subscribe((data: any) => {
         console.log("Gelen Data", data)
         this.userDetail=data;
       })

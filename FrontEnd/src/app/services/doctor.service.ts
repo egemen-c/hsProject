@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-interface User {
+interface Doctor {
   
     identityNumber: bigint,
     name: string,
@@ -32,13 +32,13 @@ imports: [
 })
 
  
-export class UserService {
+export class DoctorService {
 
   constructor(private http: HttpClient) { }
-  private baseURL = `http://localhost:8080/api/user/getAll` 
+  private baseURL = `http://172.16.88.37:8080/api/user/getAll` 
  //  app.use('/api/user/getAll', routes);
 
-  getAllData(): Observable<User> {
-   return this.http.get<User>(`${this.baseURL}`)
+  getAllData(): Observable<Doctor> {
+   return this.http.get<Doctor>(`${this.baseURL}`)
 }
 }
