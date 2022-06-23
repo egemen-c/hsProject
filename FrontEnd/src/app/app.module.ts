@@ -17,6 +17,8 @@ import { SelectInputComponent } from './select-input/select-input.component';
 import { UserComponent } from './user/user.component';
 import { GetAppointmentComponent } from './get-appointment/get-appointment.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'doctor', component:  DoctorComponent},
       {path: 'user', component:  UserComponent},
