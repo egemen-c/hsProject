@@ -15,6 +15,8 @@ import { NavComponent } from './nav/nav.component';
 import { SelectAppointmentComponent } from './select-appointment/select-appointment.component';
 import { SelectInputComponent } from './select-input/select-input.component';
 import { UserComponent } from './user/user.component';
+import { GetAppointmentComponent } from './get-appointment/get-appointment.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { UserComponent } from './user/user.component';
     NavComponent,
     SelectAppointmentComponent,
     SelectInputComponent,
-    UserComponent
+    UserComponent,
+    GetAppointmentComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,7 @@ import { UserComponent } from './user/user.component';
       {path: 'user', component:  UserComponent},
       {path: 'home', component:  HomeComponent},
       {path: 'login', component:  LoginComponent},
+      {path: 'get-appointment', component:  GetAppointmentComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
     ])
   ],
