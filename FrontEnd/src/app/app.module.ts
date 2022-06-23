@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
@@ -17,11 +17,10 @@ import { SelectInputComponent } from './select-input/select-input.component';
 import { UserComponent } from './user/user.component';
 import { GetAppointmentComponent } from './get-appointment/get-appointment.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 @NgModule({
   declarations: [
+    DoctorListComponent,
     AppComponent,
     AppointmentsComponent,
     ButtonComponent,
@@ -35,12 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     SelectInputComponent,
     UserComponent,
     GetAppointmentComponent,
-    UserDetailComponent
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       {path: 'doctor', component:  DoctorComponent},

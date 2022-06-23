@@ -8,13 +8,13 @@ import { DoctorService } from '../services/doctor.service';
 export class DoctorProfileComponent implements OnInit {
 
   constructor(private doctorService: DoctorService) { }
-  userDetail:any
+  doctorDetail:any
 
   ngOnInit() {
     this.doctorService.getAllData()
       .subscribe((data: any) => {
         console.log("Gelen Data", data)
-        this.userDetail=data;
+        this.doctorDetail=data;
       })
   }
 }

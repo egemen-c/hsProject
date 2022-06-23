@@ -6,20 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
-interface Doctor {
-  
-    identityNumber: bigint,
-    name: string,
-    surname: string,
-    email: string,
-    password: string,
-    phoneNumber: string,
-    bloodType: string,
-    role: string
-}
-
-
 imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,13 +18,14 @@ imports: [
 })
 
  
-export class DoctorService {
+export class AllDoctorService {
 
-  constructor(private http: HttpClient) { }
-  private baseURL = `http://192.168.137.1:8080/api/user/getAll` 
- //  app.use('/api/user/getAll', routes);
+  private url = 'http://172.16.88.37:8080/api/user/getAllDoctors';
+   
+  constructor(private httpClient: HttpClient) { }
+  
+  getPosts(){
+    return this.httpClient.get(this.url);
+  }
+}
 
-  getAllData(): Observable<Doctor> {
-   return this.http.get<Doctor>(`${this.baseURL}`)
-}
-}
